@@ -5,17 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link type="image/png" sizes="16x16" rel="icon"
+        href="data:image/png;base64,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">
     <script src="js/scripts.js" defer></script>
     <title>Spotify</title>
 </head>
 
 <body>
-    
+    <div class="container">
+        <nav>
+            <div class="nav-logo">
+                <i class="bi bi-spotify"></i>
+            </div>
+            <div class="nav-library">
+                <i class="bi bi-journals"></i>
+                <p>Sua Biblioteca</p>
+                <span>+</span>
+            </div>
+            <div class="nav-playlist">
+                <h5>Crie a sua primeira playlist</h5>
+                <p>É fácil, vamos te ajudar</p>
+                <button>Criar Playlist</button>
+            </div>
+            <div class="nav-podcast">
+                <h5>Que tal seguir um Podcast?</h5>
+                <p>Avisaremos você sobre nossos episódios</p>
+                <button>Explore Podcast</button>
+            </div>
+            <div class="nav-footer">
+                <a href="#">Legal</a>
+                <a href="#">Centro de Privacidade</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Cookies</a>
+                <a href="#">Sobre anúncios</a>
+                <a href="#">Acessibilidade</a>
+            </div>
+            <button class="nav-button-lang">
+                <i class="bi bi-globe"></i>
+                <span>Português do Brasil</span>
+            </button>
+        </nav>
+
+        <main>
+            <header class="search-bar">
+                <i class="bi bi-search"></i>
+                <input type="text" placeholder="O que você gostaria ouvir?">
+            </header>
+            <section class="content">
+                <h2>Artitas Populares</h2>
+                <div class="artists-grid"></div>
+
+                <h2>Albuns Populares</h2>
+                <div class="albums-grid"></div>
+            </section>
+        </main>
+    </div>
 </body>
 
 </html>
